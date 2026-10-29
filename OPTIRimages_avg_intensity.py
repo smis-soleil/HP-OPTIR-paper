@@ -1,5 +1,5 @@
 """
-@author: Beatrice D'Alò - Synchrotron SOLEIL
+@author: BDAlo 
 
 This script compute the average intensity of the single-wavelength OPTIR images of hBN considering only the crystal area as selected from the corresponding DC images.
 A chosen threshold of the DC signal is used to select the sample.

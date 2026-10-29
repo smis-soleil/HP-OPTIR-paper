@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: BD
+@author: BDAlo 
 
 Code for the fit of IR reflectance spectra of hBN at ambient conditions.
 The reflectance R(nu) is computed from the Fresnel's coefficients for a 2-interface system (thin dielectric slab).

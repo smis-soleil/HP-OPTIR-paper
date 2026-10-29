@@ -1,5 +1,5 @@
 """
-@author: Beatrice D'Alò - Synchrotron SOLEIL
+@author: BDAlo
 
 This script opens a .ptir file containing high-pressure OPTIR spectra of the considered sample (here, hBN) and performs a fit of each spectrum through the lmfit package.
 The OPTIR signal is described as I_OPTIR = I0*A(nu), where A(nu) = 1 - T(nu) - R(nu), T and R = transmittance and reflectance of the system.

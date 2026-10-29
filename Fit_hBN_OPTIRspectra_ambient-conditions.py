@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: BD
+@author: BDAlo 
 
 Code for the fit of OPTIR spectra of hBN at ambient conditions.
 The OPTIR signal is described as I_OPTIR = I0*A(nu), where A(nu) = 1 - T(nu) - R(nu), T and R = transmittance and reflectance of the system.
