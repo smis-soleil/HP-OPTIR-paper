@@ -1,6 +1,6 @@
 This folder contains the python scripts developed for the data analysis of ambient and high-pressure OPTIR and FTIR spectra and images of hBN and chrysene samples. 
 
-In particular, each task has been performed thorugh the following scripts:
+In particular:
   - Fit of the OPTIR and reflactance spectra of hBN at ambient conditions: "Fit_hBN_OPTIRspectra_ambient-conditions.py" and   "Fit_hBN_Rspectra_ambient-conditions.py" (Fig. 1 in the manuscript),
   - Fit of the OPTIR aspectra of hBN at high pressures: "Fit_hBN_OPTIRspectra_high-pressure.py" (Fig. 2 in the manuscript),
   - Calculation of the average OPTIR intensity over the hBN/chrysene crystal area: "OPTIRimages_avg_intensity.py" (Fig. 3 in the manuscript, and Fig. S2-S6 in the Supplementary Information - SI),
