@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 """
+@Author: capitani
+(modified)
+
 This script fits the data through a linear baseline + peak model (possiblity to increase the number of peaks). 
 The program reads the data file and selects a x range of the data where it performs the fit.
 
