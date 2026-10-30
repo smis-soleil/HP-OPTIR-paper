@@ -66,7 +66,7 @@ The program gives in output:
 - a plot of the linescan + best-fit sigmoidal curve,
 - a plot of the linescan + LSF + a light-shaded area which indicates the FWHM of the LSF,
 - a .txt file with the best-fit parameters.
-- 
+  
 The best-fit parameters and the FWHM of the LSF are written on the terminal.
 
 #----------------------Python script 6--------------------------
@@ -76,11 +76,11 @@ This script fits the data through a linear baseline + peak model (possiblity to 
 It reads the data file and selects a x range of the data where it performs the fit.
 
 It gives in output:
-    - a figure with the data in the selected range, the initial fit curves and the best-fit ones,
-    - a figure with the data + the best-fit curve,
-    - a window asking if you want to save the fit results. 
-    If yes --> the program produces a .txt file with the best-fit results and a .png image with the data + best-fit curve, and you can procede by fitting the higher pressure spectra.
-    If no --> the program stops.
-    The best-fit values from the last succefull fit are stored in a file. You can re-start the fitting from the last non-successfull fit.
-    - a .txt file ('fit_results_%icm-1.txt' %peak) where the best-fit parameters at each pressure are stored.
+  - a figure with the data in the selected range, the initial fit curves and the best-fit ones,
+  - a figure with the data + the best-fit curve,
+  - a window asking if you want to save the fit results. 
+  If yes --> the program produces a .txt file with the best-fit results and a .png image with the data + best-fit curve, and you can procede by fitting the higher pressure spectra.
+  If no --> the program stops.
+  The best-fit values from the last succefull fit are stored in a file. You can re-start the fitting from the last non-successfull fit.
+  - a .txt file ('fit_results_%icm-1.txt' %peak) where the best-fit parameters at each pressure are stored.
 
