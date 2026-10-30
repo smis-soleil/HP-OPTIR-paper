@@ -1,7 +1,7 @@
 """
 @author: BDAlo 
 
-This script compute the average intensity of the single-wavelength OPTIR images of hBN considering only the crystal area as selected from the corresponding DC images.
+This script computes the average intensity of the single-wavelength OPTIR images of hBN considering only the crystal area as selected from the corresponding DC images.
 A chosen threshold of the DC signal is used to select the sample.
 
 The program returns:
@@ -242,6 +242,8 @@ stats[:, 0] = P
 fig_map, ax_map = plt.subplots(3,5, constrained_layout=True)
 
 p=0
+P_max = 11
+
 for i in range(0, N):    
     DC_map = np.loadtxt('%s/%s.txt' %(path_txt, map_name_DC[int(match_P[i, 2])])) #loading of the DC image
     map = np.loadtxt('%s/%s.txt' %(path_txt, map_name[int(match_P[i, 1])]))
@@ -280,7 +282,7 @@ for i in range(0, N):
         ax_map[p//5][p%5].set_yticks([])
         i_closedcell = i
         p += 1
-    elif ((probe_power[i] == 74) and ('back' not in map_name[i]) and ('no' not in map_name[i]) and (P[i] > 0) and (P[i] < 9.2)):
+    elif ((probe_power[i] == 74) and ('back' not in map_name[i]) and ('no' not in map_name[i]) and (P[i] > 0) and (P[i] < P_max)):
         DC_lim = (np.min(DC_map)+np.max(DC_map))/2 -0.25 #Value of the DC limit conveniently chosen to have sample/bkg contrast
         print('DC lim = %.1f at P = %.1f' %(DC_lim, P[i]))
         sample_pos_P = sample_pos(DC_map, DC_lim, i_min, i_max, length)
@@ -296,32 +298,6 @@ for i in range(0, N):
         ax_map[p//5][p%5].set_yticks([])
         p += 1
         #print(p)
-        if P[i] == 5.2:
-            sample_pos_5p2 = sample_pos_P
-
-for i in range(0, N):
-    if ((probe_power[i] == 74) and ('back' not in map_name[i]) and (P[i] > 9.2)):
-    #ALTERNATIVA: dare le coordinate in i,j del campione!!
-    #DC_lim = 2.88
-    #print('Cycle 2: DC lim = %.1f at P = %.1f' %(DC_lim, P[i]))
-    #sample_pos_P = sample_pos(DC_map, DC_lim, P[i], i_min, i_max, length)
-        map = np.loadtxt('%s/%s.txt' %(path_txt, map_name[int(match_P[i, 1])]))
-        i_min = 0
-        i_max = DC_map.shape[0]
-        length = i_max
-        sample_pos_P = sample_pos_5p2
-        n_points_sample = n_points(sample_pos_P)
-        mean = np.mean(map*sample_pos_P)*map.size/n_points_sample
-        stats[i, 1] = mean
-        stats[i, 2] = np.min(map*sample_pos_P)
-        stats[i, 3] = np.max(map*sample_pos_P)
-        ax_map[p//5][p%5].imshow(map, cmap='viridis')
-        ax_map[p//5][p%5].imshow(sample_pos_P, cmap = 'Greys', alpha = 0.2)
-        ax_map[p//5][p%5].set_title('%.1f GPa' %P[i], fontsize = '8')
-        ax_map[p//5][p%5].set_xticks([])
-        ax_map[p//5][p%5].set_yticks([])
-        #print(p)
-        p += 1
 
 plt.savefig('%s\Intensity_images_sample_selection_%s.png' %(path, sample_name), dpi = 360)
 
